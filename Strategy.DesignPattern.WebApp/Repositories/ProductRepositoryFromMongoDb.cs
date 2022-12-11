@@ -26,7 +26,7 @@ namespace Strategy.DesignPattern.WebApp.Repositories
 
         public async Task Delete(Product product)
         {
-            await _productCollection.DeleteOneAsync(x=>x.Id==product.Id);
+            await _productCollection.DeleteOneAsync(x => x.Id == product.Id);
         }
 
         public async Task<List<Product>> GetAllByUserId(string userId)

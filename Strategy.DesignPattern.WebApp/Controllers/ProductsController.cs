@@ -10,9 +10,11 @@ using Strategy.DesignPattern.WebApp.Entities;
 using Strategy.DesignPattern.WebApp.Repositories;
 using Microsoft.AspNetCore.Identity;
 using BaseProject.Identity.Entities;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Strategy.DesignPattern.WebApp.Controllers
 {
+    [Authorize]
     public class ProductsController : Controller
     {
         private readonly IProductRepository _productRepository;
@@ -62,8 +64,6 @@ namespace Strategy.DesignPattern.WebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,Price,Stock,UserId,CreatedDate")] Product product)
         {
-            if (ModelState.IsValid)
-            {
                 var user = await _userManager.FindByNameAsync(User.Identity.Name);
 
                 product.UserId = user.Id;
@@ -71,8 +71,6 @@ namespace Strategy.DesignPattern.WebApp.Controllers
 
                 await _productRepository.Add(product);
                 return RedirectToAction(nameof(Index));
-            }
-            return View(product);
         }
 
         // GET: Products/Edit/5
@@ -128,7 +126,7 @@ namespace Strategy.DesignPattern.WebApp.Controllers
         // GET: Products/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
-            if (id is null)
+            if (id is null) 
             {
                 return NotFound();
             }
