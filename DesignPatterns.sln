@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaseProject.Identity", "Bas
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Strategy.DesignPattern.WebApp", "Strategy.DesignPattern.WebApp\Strategy.DesignPattern.WebApp.csproj", "{E84E3E09-41E5-4BFA-968F-140582155C49}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Template.DesignPattern.WebApp", "Template.DesignPattern.WebApp\Template.DesignPattern.WebApp.csproj", "{5187972F-B413-427D-984F-92D80C161D09}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{E84E3E09-41E5-4BFA-968F-140582155C49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E84E3E09-41E5-4BFA-968F-140582155C49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E84E3E09-41E5-4BFA-968F-140582155C49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5187972F-B413-427D-984F-92D80C161D09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5187972F-B413-427D-984F-92D80C161D09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5187972F-B413-427D-984F-92D80C161D09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5187972F-B413-427D-984F-92D80C161D09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
