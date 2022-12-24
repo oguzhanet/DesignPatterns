@@ -1,5 +1,8 @@
-﻿using BaseProject.Identity.Models;
+﻿using BaseProject.Identity.Entities;
+using BaseProject.Identity.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace BaseProject.Identity.Controllers
@@ -7,15 +10,17 @@ namespace BaseProject.Identity.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly UserManager<AppUser> _userManager;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, UserManager<AppUser> userManager)
         {
             _logger = logger;
+            _userManager = userManager;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            return View(await _userManager.Users.ToListAsync());
         }
 
         public IActionResult Privacy()
